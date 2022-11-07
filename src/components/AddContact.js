@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { uuid } from "uuidv4";
 
 const AddContact = (props) => {
   const [name, setName] = useState("");
@@ -7,6 +8,7 @@ const AddContact = (props) => {
   const addContact = (e) => {
     e.preventDefault();
     props.newContact({
+      id: uuid(),
       name,
       email,
     });
